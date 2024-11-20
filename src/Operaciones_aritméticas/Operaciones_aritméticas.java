@@ -1,5 +1,5 @@
 //Aqui se mostrara el apartado del submenu de operaciones aritmeticas
-//(Este seguramente pa marcos)
+//(Este seguramente pa marcos o pobes)
 package Operaciones_aritméticas;
 
 public class Operaciones_aritméticas {
