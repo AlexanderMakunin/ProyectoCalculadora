@@ -60,9 +60,7 @@ public class Conversiones_de_base {
             numDecimal /= 16;
         }
         return sb.reverse().toString();
-
     }
-
     /**
      * Método para pasar de un número binario a un decumal
      * @param numBinario un número(string) en binario
@@ -95,9 +93,22 @@ public class Conversiones_de_base {
         int decimal = binarioDecimal(numBinario);
         return decimalHexadecimal(decimal);
     }
+
+    /**
+     * Método que convierte un número hexadecimal a uno binario
+     * @param num un número hexadecimal
+     * @return el número en binario
+     */
     public static int hexadecimalBinario(String num) {
-        return 0;
+        int decimal = hexadecimalDecimal(num);
+        return decimalBinario(decimal);
     }
+
+    /**
+     * Método que pasa un número de hexadecimal a decimal
+     * @param num un string de un número hexadecimal
+     * @return el número en decimal
+     */
     public static int hexadecimalDecimal(String num) {
         boolean valido = true;
         int longitud = num.length();
@@ -128,11 +139,6 @@ public class Conversiones_de_base {
     }
     public static void main(String[] args) {
         //Pruebas
-        int hexadecimalDecimal = hexadecimalDecimal("h");
-        if (hexadecimalDecimal == -1) {
-            System.err.println("Número invalido.");
-        }else {
-            System.out.println(hexadecimalDecimal);
-        }
+
     }
 }
