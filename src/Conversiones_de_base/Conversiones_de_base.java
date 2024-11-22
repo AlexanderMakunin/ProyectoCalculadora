@@ -26,38 +26,38 @@ public class Conversiones_de_base {
 
     /**
      * Método para pasar de decimal a binario
-     * @param num un numero decimal
+     * @param numDecimal un numero decimal
      * @return el numero en binario
      */
-    public static int decimalBinario(int num) {
+    public static int decimalBinario(int numDecimal) {
         StringBuilder sb = new StringBuilder();
         int resto;
-        if (num == 0) {
+        if (numDecimal == 0) {
             return 0;
         }
-        while (num > 0) {
-            resto = num % 2;
+        while (numDecimal > 0) {
+            resto = numDecimal % 2;
             sb.append(resto);
-            num /= 2;
+            numDecimal /= 2;
         }
         return Integer.parseInt(sb.reverse().toString());
     }
     /**
      * Método para pasar de decimal a hexadecimal
-     * @param num un número decimal
+     * @param numDecimal un número decimal
      * @return el número en hexadecimal
      */
-    public static String decimalHexadecimal(int num) {
+    public static String decimalHexadecimal(int numDecimal) {
         StringBuilder sb = new StringBuilder();
         int resto;
-        if (num == 0) {
+        if (numDecimal == 0) {
             return "0";
         }
         char[] caracteresHexadecimal = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-        while (num > 0) {
-            resto = num % 16;
+        while (numDecimal > 0) {
+            resto = numDecimal % 16;
             sb.append(caracteresHexadecimal[resto]);
-            num /= 16;
+            numDecimal /= 16;
         }
         return sb.reverse().toString();
 
@@ -88,21 +88,51 @@ public class Conversiones_de_base {
     }
     /**
      * Método para convertir un número de binario a hexadecimal
-     * @param num un numero en binario
+     * @param numBinario un numero en binario
      * @return el número convertido a hexadecimal
      */
-    public static int binarioHexadecimal(int num) {
+    public static String binarioHexadecimal(String numBinario) {
+        int decimal = binarioDecimal(numBinario);
+        return decimalHexadecimal(decimal);
+    }
+    public static int hexadecimalBinario(String num) {
         return 0;
     }
-    public static int hexadecimalBinario(int num) {
-        return 0;
-    }
-    public static int hexadecimalDecimal(int num) {
-        return 0;
+    public static int hexadecimalDecimal(String num) {
+        boolean valido = true;
+        int longitud = num.length();
+        char digito;
+        int numDecimal = 0;
+
+        for (int i = 0; i < longitud; i++) {
+            digito = num.charAt(longitud-1-i);
+            if (Character.isLetter(digito)) {
+                int correspondenciaLetra  = switch (digito) {
+                    case 'A','a' -> 10;
+                    case 'B','b' -> 11;
+                    case 'C','c' -> 12;
+                    case 'D','d' -> 13;
+                    case 'E','e' -> 14;
+                    case 'F','f' -> 15;
+                    default -> 0;
+                };
+                if (correspondenciaLetra==0) {
+                    valido = false;
+                }
+                numDecimal += (correspondenciaLetra * (int) Math.pow(16,i));
+            }else {
+                numDecimal += (Character.getNumericValue(digito) * (int) Math.pow(16,i));
+            }
+        }
+        return valido ? numDecimal : -1;
     }
     public static void main(String[] args) {
         //Pruebas
-        int binarioDecimal = binarioDecimal("1010131");
-        System.out.println(binarioDecimal);
+        int hexadecimalDecimal = hexadecimalDecimal("h");
+        if (hexadecimalDecimal == -1) {
+            System.err.println("Número invalido.");
+        }else {
+            System.out.println(hexadecimalDecimal);
+        }
     }
 }
