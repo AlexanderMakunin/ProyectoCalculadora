@@ -1,10 +1,11 @@
-//Si quereis añadir una wea o lo que sea aqui lo teneis
+//Si quereis añadir una wea o lo que sea aqui lo teneis, y no metais codigo basura gracias
 package lib;
-import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
 
 public class IO {
+    /**
+     * Para leer el texto
+     */
     public static Scanner scanner = new Scanner(System.in);
     /**
      * Solicita un texto y valida su longitud este comprendida entre lMin y lMax
@@ -49,6 +50,7 @@ public class IO {
 
         return num;
     }
+<<<<<<< HEAD
 
     /**
      * Solicita un texto y valida su longitud este comprendida entre nMin y nMax, te devuelve el numero puesto
@@ -160,5 +162,7 @@ public class IO {
         }
         return multiplos5;
     }
+=======
+>>>>>>> d9d2cad4c887a1be022f6bf6dc3f827dc5319d83
 }
 
