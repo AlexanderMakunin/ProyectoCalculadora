@@ -140,5 +140,45 @@ public class Conversiones_de_base {
     public static void main(String[] args) {
         //Pruebas
 
+        int choice;
+        do {
+            choice = subMenuConversionesBase();
+            switch (choice) {
+                case 1 -> {
+                    int decimal = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo en binario:", 0, 1000);
+                    int decimalBinario = decimalBinario(decimal);
+                    System.out.println(decimalBinario);
+                }
+                case 2 -> {
+                    int decimal = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo a hexadecimal:",0,1000);
+                    String deximalHexadecimal = decimalHexadecimal(decimal);
+                    System.out.println(deximalHexadecimal);
+                }
+                case 3 -> {
+                    String binario = IO.solicitarString("Ingrese un número en binario y te lo devuelvo en decimal:",0,100000000);
+                    int binarioDecimal = binarioDecimal(binario);
+                    System.out.println(binarioDecimal);
+                }
+                case 4 -> {
+                    String binario = IO.solicitarString("Ingrese un número en binario y te lo devuelvo en hexadecimal:",0,10000000);
+                    String binarioHexadecimal = binarioHexadecimal(binario);
+                    System.out.println(binarioHexadecimal);
+                }
+                case 5 -> {
+                    String hexadecimal = IO.solicitarString("Ingrese un número en hexadecimal y te lo devuelvo en binario:",0,100000);
+                    int hexadecimalBinario = hexadecimalBinario(hexadecimal);
+                    System.out.println(hexadecimalBinario);
+                }
+                case 6 -> {
+                    String hexadecimal = IO.solicitarString("Ingrese un número en hexadecimal y te lo devuelvo en decimal:",0,100000);
+                    int hexadecimalDecimal = hexadecimalDecimal(hexadecimal);
+                    System.out.println(hexadecimalDecimal);
+                }
+                case 0 -> {
+
+                }
+            }
+
+        } while (choice != 0);
     }
 }
