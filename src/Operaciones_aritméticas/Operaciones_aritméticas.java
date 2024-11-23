@@ -2,8 +2,17 @@
 //(Este seguramente pa marcos o pobes)
 package Operaciones_aritméticas;
 
+import lib.IO;
+
 public class Operaciones_aritméticas {
     public static void main(String[] args) {
+    }
+
+    /**
+     * Muestre el Submenú de Operaciones Aritméticas devolviendo la opción elejida
+     * @return Devuelve la opción elejida por el usuario
+     */
+    public static int mostrarSubMenuOperacionesAritmeticas(){
         System.out.println("\n*****************************");
         System.out.println("** OPERACIONES ARITMÉTICAS **");
         System.out.println("*****************************");
@@ -14,6 +23,6 @@ public class Operaciones_aritméticas {
         System.out.println("5. Resto de la división");
         System.out.println("-----------------------------");
         System.out.println("0. Volver al menú principal");
-        System.out.print("Elija una opción: ");
+        return IO.solicitarInt("Elija una opción",0,5);
     }
 }
