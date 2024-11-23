@@ -23,7 +23,7 @@ public class Main {
                     System.out.println("Saliendo del programa...");
                     break;
                 default:
-                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                    System.err.println("Opción no válida. Por favor, intente de nuevo.");
                     break;
             }
         } while (opcion != 0);
