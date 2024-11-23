@@ -4,6 +4,8 @@ package Operaciones_aritméticas;
 
 import lib.IO;
 
+import java.util.Scanner;
+
 public class Operaciones_aritméticas {
     public static void main(String[] args) {
     }
@@ -24,5 +26,19 @@ public class Operaciones_aritméticas {
         System.out.println("-----------------------------");
         System.out.println("0. Volver al menú principal");
         return IO.solicitarInt("Elija una opción",0,5);
+    }
+
+    /**
+     * Pide dos numeros double, los cuales pueden ser negativos, y los suma, y cuando hace la operacion muestra por pantalla el num1 + num2 y el resultado final
+     */
+    public static void operacionSuma(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca el primer número:");
+        double num1 = Double.parseDouble(scanner.nextLine());
+        System.out.println("Introduzca el segundo número:");
+        double num2 = Double.parseDouble(scanner.nextLine());
+
+        double suma = num1 + num2;
+        System.out.printf("El resultado de la suma de %.2f + %.2f es de %.2f", num1,num2,suma);
     }
 }
