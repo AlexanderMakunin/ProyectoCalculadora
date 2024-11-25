@@ -13,10 +13,10 @@ public class Main {
             mostrarMenuPrincipal();
             opcion = IO.solicitarInt("Elija una opción: ", 0, 2);
             switch (opcion) {
-                /*case 1:
+                case 1:
                     menuOperacionesAritmeticas();
                     break;
-                case 2:
+                /*case 2:
                     menuConversionesBase();
                     break;*/
                 case 0:
