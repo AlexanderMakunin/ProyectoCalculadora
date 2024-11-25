@@ -38,4 +38,36 @@ public class Main {
         System.out.println("2. Conversiones de base");
         System.out.println("0. Salir del programa");
     }
+    //Incorporacion del metodo que llema a la libreria de las operaciones aritmeticas contodas las opciones de calculo
+    public static void menuOperacionesAritmeticas() {
+        int opcion;
+        do {
+            opcion = Operaciones_aritméticas.mostrarSubMenuOperacionesAritmeticas();
+            switch (opcion) {
+                case 1:
+                    Operaciones_aritméticas.operacionSuma();
+                    break;
+                case 2:
+                    Operaciones_aritméticas.operacionResta();
+                    break;
+                case 3:
+                    Operaciones_aritméticas.operacionMultiplicacion();
+                    break;
+                case 4:
+                    Operaciones_aritméticas.operacionDivision();
+                    break;
+                case 5:
+                    Operaciones_aritméticas.operacionRestoDivision();
+                    break;
+                case 0:
+                    System.out.println("Volviendo al menú principal...");
+                    break;
+                default:
+                    System.err.println("Opción no válida. Por favor, intente de nuevo.");
+                    break;
+            }
+        } while (opcion != 0);
+    }
+
+    
 }
