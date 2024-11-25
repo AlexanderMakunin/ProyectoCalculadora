@@ -49,10 +49,10 @@ public class Main {
                     Operaciones_aritméticas.operacionSuma();
                     break;
                     //comento esto mientras marcos hace los otros metodos para las otras operaciones
-                /*case 2:
+                case 2:
                     Operaciones_aritméticas.operacionResta();
                     break;
-                case 3:
+                /*case 3:
                     Operaciones_aritméticas.operacionMultiplicacion();
                     break;
                 case 4:
