@@ -47,7 +47,8 @@ public class Main {
                 case 1:
                     Operaciones_aritméticas.operacionSuma();
                     break;
-                case 2:
+                    //comento esto mientras marcos hace los otros metodos para las otras operaciones
+                /*case 2:
                     Operaciones_aritméticas.operacionResta();
                     break;
                 case 3:
@@ -58,7 +59,7 @@ public class Main {
                     break;
                 case 5:
                     Operaciones_aritméticas.operacionRestoDivision();
-                    break;
+                    break;*/
                 case 0:
                     System.out.println("Volviendo al menú principal...");
                     break;
