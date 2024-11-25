@@ -16,9 +16,10 @@ public class Main {
                 case 1:
                     menuOperacionesAritmeticas();
                     break;
-                /*case 2:
+                    //Como ya funciona el submenu de converiosnes base pues descomento eso para que sea funcional.
+                case 2:
                     menuConversionesBase();
-                    break;*/
+                    break;
                 case 0:
                     System.out.println("Saliendo del programa...");
                     break;
@@ -69,6 +70,49 @@ public class Main {
             }
         } while (opcion != 0);
     }
-
-    
+//Implementacion para que funcioene el submenu de las conversiones, he sugerido un cambio en la libreria IO, para que la validacion de datos sea Perfecta, veremos a ver si se añade o no.
+    public static void menuConversionesBase() {
+        int opcion;
+        do {
+            opcion = Conversiones_de_base.subMenuConversionesBase();
+            switch (opcion) {
+                case 1:
+                    int decimal = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo en binario:", 0, 1000);
+                    int decimalBinario = Conversiones_de_base.decimalBinario(decimal);
+                    System.out.println("Resultado en binario: " + decimalBinario);
+                    break;
+                case 2:
+                    int decimalHex = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo en hexadecimal:", 0, 1000);
+                    String hexResult = Conversiones_de_base.decimalHexadecimal(decimalHex);
+                    System.out.println("Resultado en hexadecimal: " + hexResult);
+                    break;
+                case 3:
+                    String binario = IO.solicitarString("Ingrese un número en binario y te lo devuelvo en decimal:", 1, 32);
+                    int binarioDecimal = Conversiones_de_base.binarioDecimal(binario);
+                    System.out.println("Resultado en decimal: " + binarioDecimal);
+                    break;
+                case 4:
+                    String binToHex = IO.solicitarString("Ingrese un número en binario y te lo devuelvo en hexadecimal:", 1, 32);
+                    String binHexResult = Conversiones_de_base.binarioHexadecimal(binToHex);
+                    System.out.println("Resultado en hexadecimal: " + binHexResult);
+                    break;
+                case 5:
+                    String hexToBin = IO.solicitarString("Ingrese un número en hexadecimal y te lo devuelvo en binario:", 1, 8);
+                    int hexBinResult = Conversiones_de_base.hexadecimalBinario(hexToBin);
+                    System.out.println("Resultado en binario: " + hexBinResult);
+                    break;
+                case 6:
+                    String hexToDec = IO.solicitarString("Ingrese un número en hexadecimal y te lo devuelvo en decimal:", 1, 8);
+                    int hexDecResult = Conversiones_de_base.hexadecimalDecimal(hexToDec);
+                    System.out.println("Resultado en decimal: " + hexDecResult);
+                    break;
+                case 0:
+                    System.out.println("Volviendo al menú principal...");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                    break;
+            }
+        } while (opcion != 0);
+    }
 }
