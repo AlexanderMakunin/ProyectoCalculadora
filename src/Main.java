@@ -52,13 +52,13 @@ public class Main {
                 case 2:
                     Operaciones_aritméticas.operacionResta();
                     break;
-                /*case 3:
+                case 3:
                     Operaciones_aritméticas.operacionMultiplicacion();
                     break;
                 case 4:
                     Operaciones_aritméticas.operacionDivision();
                     break;
-                case 5:
+                /*case 5:
                     Operaciones_aritméticas.operacionRestoDivision();
                     break;*/
                 case 0:

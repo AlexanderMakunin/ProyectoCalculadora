@@ -94,26 +94,56 @@ public class IO {
         }
         return true;
     }
-    /*
+
+    /**
+     * Formatea el numero del resultado de la operacion de 2 numeros para sacar un String con los decimales justos y necesarios a los que corresponderia
+     * @param numero1 El primer numero introducido
+     * @param numero2 El segundo numero introducido
+     * @param resultado El resultado de la operacion de los numeros anteriores
+     * @return Devuelve un String con los decimales justos de el resultado
+     */
     public static String formatearResultado(double numero1, double numero2, double resultado){
         int decimales1 = contarDecimales(numero1);
         int decimales2 = contarDecimales(numero2);
-        int decimalesMax = decimales1 > decimales2 ? decimales1 : decimales2;
-
-
-    }*/
+        int maxDecimales = decimales1 > decimales2 ? decimales1 : decimales2;
+        String formato = "%." + maxDecimales + "f";
+        return String.format(formato, resultado);
+    }
 
     /**
-     * Cuenta a ver si el numero introducido tiene decimales o no los tiene
-     * @param numero Es el numero introducido por el usuario
-     * @return Devuelve la cantidad de deciamles que tenga el numero, y en el caso de que no tenga, pues devuelve 0 decimales
+     * Cuenta los decimales que tiene cada uno, en el caso de que no haya decimales sacará un 0, si hay decimales, sacará el numero de decimales
+     * @param numero Es el numero que queremos contar los decimales
+     * @return Devuelve la cantidad de decimales
      */
     public static int contarDecimales(double numero){
-        String[] partes = Double.toString(numero).split("\\n");
-        if (partes.length == 2) {
-            return partes[1].length();
+        String textoNumero = Double.toString(numero);
+        int puntoIndex = textoNumero.indexOf('.');
+        if (puntoIndex == -1) {
+            return 0;
+        } else {
+            return textoNumero.length() - puntoIndex - 1;
         }
-        return 0;
+    }
+
+    /**
+     * Formatea el resultado principaklmente para la multiplicacion, para cuando se incrementan la cantidad de decimales salgan todos los decimales justos
+     * @param resultado Es el resultado de la operacion
+     * @return Devuelve el resultado con los decimales justos
+     */
+    public static String formatearResultado(double resultado) {
+        String resultadoStr = Double.toString(resultado);
+        int puntoIndex = resultadoStr.indexOf('.');
+        if (puntoIndex == -1) {
+            return resultadoStr;
+        }
+        int ultimoIndiceNoZero = resultadoStr.length() - 1;
+        while (ultimoIndiceNoZero > puntoIndex && resultadoStr.charAt(ultimoIndiceNoZero) == '0') {
+            ultimoIndiceNoZero--;
+        }
+        if (ultimoIndiceNoZero == puntoIndex) {
+            return resultadoStr.substring(0, puntoIndex);
+        }
+        return resultadoStr.substring(0, ultimoIndiceNoZero + 1);
     }
 }
 
