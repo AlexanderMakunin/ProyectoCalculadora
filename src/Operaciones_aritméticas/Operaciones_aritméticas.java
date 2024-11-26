@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Operaciones_aritméticas {
     public static void main(String[] args) {
-        operacionDivision();
+        operacionRestoDivision();
     }
 
     /**
@@ -79,6 +79,25 @@ public class Operaciones_aritméticas {
         double division = dividiendo / divisor;
         String resultado = IO.formatearResultado(division);
         System.out.printf("El resultado de la division de %."+decimales1+"f / %."+decimales2+"f es de %s",dividiendo,divisor,resultado);
+    }
+
+    /**
+     * Pide dos numeros double, los cuales pueden ser negativos, y los divide, y cuando hace la operacion muestra por pantalla el resto de la division
+     */
+    public static void operacionRestoDivision(){
+        double dividiendo = IO.obtenerNumero("Introduzca el dividiendo");
+        double divisor;
+        do {
+            divisor = IO.obtenerNumero("Introduzca el divisor");
+            if (divisor == 0){
+            System.err.println("El divisor no puede ser 0. Introduce un valor correcto");
+            }
+        }while (divisor == 0);
+        int decimales1 = IO.contarDecimales(dividiendo);
+        int decimales2 = IO.contarDecimales(divisor);
+        double resto = dividiendo % divisor;
+        String resultado = IO.formatearResultado(resto);
+        System.out.printf("El resto de la division de %."+decimales1+"f / %."+decimales2+"f es de %s",dividiendo,divisor,resultado);
     }
 
 }
