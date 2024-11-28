@@ -145,12 +145,12 @@ public class Conversiones_de_base {
             choice = subMenuConversionesBase();
             switch (choice) {
                 case 1 -> {
-                    int decimal = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo en binario:", 0, 1000);
+                    int decimal = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo en binario:", 0);
                     int decimalBinario = decimalBinario(decimal);
                     System.out.println(decimalBinario);
                 }
                 case 2 -> {
-                    int decimal = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo a hexadecimal:",0,1000);
+                    int decimal = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo a hexadecimal:",0);
                     String deximalHexadecimal = decimalHexadecimal(decimal);
                     System.out.println(deximalHexadecimal);
                 }

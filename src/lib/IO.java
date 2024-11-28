@@ -56,6 +56,28 @@ public class IO {
     }
 
     /**
+     * Solicita un texto y valida su longitud que no sea menor al numero nMin, devuelve el numero puesto
+     *
+     * @param msj El mensaje con el que se solicita el número
+     * @param nMin Número mínimo permitido
+     * @return devuelve el número introducido
+     */
+    public static int solicitarInt(String msj, int nMin) {
+        int num;
+        boolean check = true;
+        do {
+            if (!check) {
+                System.err.println("Número introducido incorrecto, intentalo de nuevo.");
+            }
+            System.out.println(msj);
+            num = Integer.parseInt(scanner.nextLine());
+            check = num >= nMin;
+        } while (!check);
+
+        return num;
+    }
+
+    /**
      * Solicita un numero booleano al usuario y comprueba de que sea un booleano
      * @param mensaje Es el mensaje donde pondremos lo que deberá de introducir el usuario
      * @return Devuelve el numero verificado y todo
