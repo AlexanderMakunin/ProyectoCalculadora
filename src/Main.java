@@ -77,12 +77,12 @@ public class Main {
             opcion = Conversiones_de_base.subMenuConversionesBase();
             switch (opcion) {
                 case 1:
-                    int decimal = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo en binario:", 0, 1000);
+                    int decimal = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo en binario:", 0);
                     int decimalBinario = Conversiones_de_base.decimalBinario(decimal);
                     System.out.println("Resultado en binario: " + decimalBinario);
                     break;
                 case 2:
-                    int decimalHex = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo en hexadecimal:", 0, 1000);
+                    int decimalHex = IO.solicitarInt("Ingrese un número decimal y te lo devuelvo en hexadecimal:", 0);
                     String hexResult = Conversiones_de_base.decimalHexadecimal(decimalHex);
                     System.out.println("Resultado en hexadecimal: " + hexResult);
                     break;
