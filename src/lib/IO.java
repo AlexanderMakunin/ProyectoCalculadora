@@ -83,16 +83,14 @@ public class IO {
      * @param entrada Es el string el cual queremos saber si es un numero
      * @return Devolvera true en el caso de que se un numero, o false en el caso de que no
      */
-    public static boolean esNumero(String entrada){
-        if (entrada == null || entrada.isEmpty()){
+    public static boolean esNumero(String entrada) {
+        if (entrada == null || entrada.isEmpty()) {
             return false;
         }
-        for (char c : entrada.toCharArray()){
-            if (!Character.isDigit(c) && c !='.' && c !='-' && c !='+' ){
-                return false;
-            }
-        }
-        return true;
+
+        String patron = "^[+-]?\\d*(\\.\\d+)?$";
+
+        return entrada.matches(patron);
     }
 
     /**
