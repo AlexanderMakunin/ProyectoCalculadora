@@ -16,7 +16,6 @@ public class Main {
                 case 1:
                     menuOperacionesAritmeticas();
                     break;
-                    //Como ya funciona el submenu de converiosnes base pues descomento eso para que sea funcional.
                 case 2:
                     menuConversionesBase();
                     break;
@@ -48,7 +47,6 @@ public class Main {
                 case 1:
                     Operaciones_aritméticas.operacionSuma();
                     break;
-                    //comento esto mientras marcos hace los otros metodos para las otras operaciones
                 case 2:
                     Operaciones_aritméticas.operacionResta();
                     break;
