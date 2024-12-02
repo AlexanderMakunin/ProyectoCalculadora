@@ -94,7 +94,7 @@ public class IO {
                 validacion = true;
             }
             else {
-                System.out.println("No valido, porfavor introduzca un número");
+                System.err.println("No valido, porfavor introduzca un número");
             }
         }
         return numero;
